@@ -1,0 +1,17 @@
+.template-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .template-buttons button {
+    flex: 1;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .template-buttons button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,13 @@
+.signInButton {
+    margin: 0 3.1rem;
+    margin-top: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
+
+.signInButton:hover,
+.signInButton:active {
+    color: red;
+}

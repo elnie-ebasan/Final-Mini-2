@@ -1,0 +1,71 @@
+.SignInForm-area {
+    width: 300px;
+    position: relative;
+    margin-top: 8rem ;
+}
+
+.SignInForm input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    width: 70%;
+  }
+
+
+.header {
+    display: flex;
+    position: absolute;
+    bottom: 1.7rem;
+    left: 6rem;
+}
+
+.signInButtons {
+    margin-top: 1rem;
+}
+
+.header img {
+    position: absolute;
+    left: -1.2rem;
+    top: 1.5rem;
+}
+
+.header p {
+    position: absolute;
+    left: 5px;
+}
+
+
+.signInForm {
+    position: relative;
+    margin: 5rem auto;
+}
+
+.login-message {
+    position: absolute; 
+    top: -1.5rem;
+    right: 45px;
+    font-size: 14px;
+  }
+
+p {
+    padding-top: 3rem;
+    padding-left: 2.2rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+  
+  .error {
+    color: red;
+    font-weight: bold;
+}
+  
+.mensahe-link {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
