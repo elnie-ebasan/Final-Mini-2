@@ -1,17 +1,10 @@
-import { useState } from "react";
-import SignInButtons from "../SignInButtons/SignInButtons";
-import './SignInForm.css'
-import headerLogo from '../../../UI-images/mensahe-logo.jpg'
+import React, { useState } from 'react';
+import './SignInForm.css';
+import { Link } from 'react-router-dom';
 
-const users = [
-  { username: "elnie.ebasan", password: "Abc123**" },
-  { username: "el.yan", password: "Abcd1234**" },
-];
-
-function SignInForm () {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [loginStatus, setLoginStatus] = useState("");
+function SignInForm(props) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -21,64 +14,46 @@ function SignInForm () {
     setPassword(event.target.value);
   };
 
-  const handleLogIn = (event) => {
+  const handleSignIn = (event) => {
     event.preventDefault();
-    const user = users.find((user) => user.username === username && user.password === password);
-    if (user) {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && username === user.username && password === user.password) {
       console.log("Logged in as:", user.username);
-      setUsername("");
-      setPassword("");
+      alert('Login successful!');
+      setUsername('');
+      setPassword('');
       setTimeout(() => {
         window.location.href = "/user";
-      }, 2000);
+      }, 1000);
     } else {
-      setLoginStatus("error");
-      console.log("Incorrect username or password");
-      setTimeout(() => {
-        setLoginStatus("");
-      }, 2000);
+      alert('Invalid username or password.');
     }
-  };  
-
-  const handleSignup = (event) => {
-    event.preventDefault();
-    console.log('Register');
   };
 
   return (
-    <div className="SignInForm-area">
-      <div className="signIn">
-        <div className="header">
-          <img src={headerLogo} alt="logo" style={{width: '60px'}} />
-          <p>ensahe</p>
-        </div>
+    <form className="signInForm" onSubmit={handleSignIn}>
+      <input
+        type="text"
+        id="username"
+        value={username}
+        placeholder="Username"
+        onChange={handleUsernameChange}
+      />
 
-        {loginStatus && (
-        <div className={`login-message ${loginStatus}`}>
-          {loginStatus === "success" ? "Login successful!" : "Invalid username or password."}
-        </div>
-      )}
-      <form className="signInForm" onSubmit={handleLogIn}>
-        <input
-          type="text"
-          value={username}
-          placeholder="Username"
-          onChange={handleUsernameChange}
-        />
-        <br />
-        <br />
-        <input
-          type="password"
-          value={password}
-          placeholder="Password"
-          onChange={handlePasswordChange}
-        />
-        <br />
-        <SignInButtons onSignIn={handleLogIn} onRegister={handleSignup} />
-      </form>
+      <input
+        type="password"
+        id="password"
+        value={password}
+        placeholder="Password"
+        onChange={handlePasswordChange}
+      />
+
+      <div className='signInButtons'>
+      <button className='signIn-btn' type="submit">Sign In</button>
+      <button type="submit"><Link to='signup'>Sign Up</Link> </button>
       </div>
-    </div>
+    </form>
   );
 }
 
-export default SignInForm
+export default SignInForm;

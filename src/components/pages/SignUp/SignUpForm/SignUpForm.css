@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   margin: 1rem auto;
-  gap: 16px;
+  gap: 15px;
 }
 
 input[type="text"],
@@ -28,7 +28,7 @@ input[type="email"] {
 }
 
 .signUpbutton button:hover {
-  background-color: #006080;
+ color: #006080;
 }
 
 .signUpbutton {
