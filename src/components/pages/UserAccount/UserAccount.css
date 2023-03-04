@@ -7,6 +7,14 @@
     display: flex;
     height: 100vh;
   }
+
+.profile {
+  margin-top: 2rem;
+}
+
+.saved {
+  margin-top: 20rem;
+}
   
   .sideBar {
     flex-basis: 20%;

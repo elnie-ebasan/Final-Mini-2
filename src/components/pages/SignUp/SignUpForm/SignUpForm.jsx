@@ -26,6 +26,11 @@ function SignUpForm(props) {
 
   const handleSignUp = (event) => {
     event.preventDefault();
+      // Check if any field is empty
+  if (!fullname || !username || !password || !email) {
+    alert('Please fill out all fields.');
+    return;
+  }
     const newUser = { fullname, username, password, email };
     localStorage.setItem('user', JSON.stringify(newUser));
     setFullname('');
@@ -35,8 +40,8 @@ function SignUpForm(props) {
     alert('Sign up successful!');
   };
 
-  const [signInUsername, setSignInUsername] = useState('');
-  const [signInPassword, setSignInPassword] = useState('');
+  // const [signInUsername, setSignInUsername] = useState('');
+  // const [signInPassword, setSignInPassword] = useState('');
 
   return (
     <>

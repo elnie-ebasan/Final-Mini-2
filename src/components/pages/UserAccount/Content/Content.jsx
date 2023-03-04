@@ -34,10 +34,11 @@ function Content(props) {
   };
 
   return (
-    <div className="content" >
+    <div className="content" style={{textAlign: 'center'}}>
         {props.isEditing ? (
           <div className="edit-area" >
-            <textarea className='textArea' value={message} onChange={handleTextEdit} style={{backgroundColor: props.color}} />
+            <textarea className='textArea' value={message} onChange={handleTextEdit} style={{backgroundColor: props.color, textAlign: 'center'}} />
+
             <div className="button-group">
               <button className='save' onClick={handleSaveButtonClick}>Save</button>
               <button className='cancel' onClick={handleCancelButtonClick}>Cancel</button>

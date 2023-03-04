@@ -50,7 +50,7 @@ function SignInForm(props) {
 
       <div className='signInButtons'>
       <button className='signIn-btn' type="submit">Sign In</button>
-      <button type="submit"><Link to='signup'>Sign Up</Link> </button>
+      <button className='signIn-btn' type="submit"><Link to='signup' className="no-underline">Sign Up</Link> </button>
       </div>
     </form>
   );

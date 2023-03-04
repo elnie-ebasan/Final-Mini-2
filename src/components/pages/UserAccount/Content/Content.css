@@ -10,10 +10,11 @@
   }
 
 .textArea {
-  width: 100%;
-  height: 90%;
+  width: 50%;
   text-align: center;
   justify-content: center;
+  align-items: center;
+  padding: 15rem;
 }
 
 .button-group {
@@ -24,3 +25,4 @@
   margin: 0 10px;
   cursor: pointer;
 }
+
